@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meteo Italia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>🌤️ Meteo Italia</h1>
+      <p>Cerca qualsiasi città e consulta meteo attuale e previsioni</p>
+    </header>
+
+    <section class="search">
+      <label for="city-input">Cerca una città</label>
+
+      <div class="search-box">
+        <input
+          id="city-input"
+          type="text"
+          placeholder="Es. Napoli, Salerno, Milano..."
+          autocomplete="off"
+        />
+        <button id="search-button" type="button">Cerca</button>
+      </div>
+
+      <ul id="suggestions" class="suggestions hidden"></ul>
+    </section>
+
+    <div id="status" class="status hidden"></div>
+
+    <section id="current" class="current hidden">
+      <div class="current-main">
+        <span id="current-icon" class="big-icon"></span>
+        <div>
+          <h2 id="city-name"></h2>
+          <p id="city-region" class="region"></p>
+          <p id="current-temp" class="temperature"></p>
+          <p id="current-description"></p>
+        </div>
+      </div>
+
+      <div class="details">
+        <div>
+          <span>Percepita</span>
+          <strong id="feels-like"></strong>
+        </div>
+        <div>
+          <span>Umidità</span>
+          <strong id="humidity"></strong>
+        </div>
+        <div>
+          <span>Vento</span>
+          <strong id="wind"></strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="forecast" class="forecast hidden">
+      <h3>Previsioni 7 giorni</h3>
+      <div id="forecast-grid" class="forecast-grid"></div>
+    </section>
+
+    <footer>
+      <p>
+        Dati meteo e geocoding:
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
